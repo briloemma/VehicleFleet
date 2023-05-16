@@ -9,13 +9,17 @@ namespace VehicleFleet
         public string EngineType { get; set; }
         public string SerialNumber { get; set; }
 
+        public Engine()
+        {
+
+        }
+
         public Engine(int horsePower, double volume, string type, string serialNumber)
         {
             HorsePower = horsePower;
             Volume = volume;
             EngineType = type;
             SerialNumber = serialNumber;
-
         }
 
         public void ShowEngineInfo()

@@ -1,4 +1,5 @@
 ﻿using DataProject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
@@ -10,7 +11,7 @@ namespace VehicleFleet
     [XmlInclude(typeof(Bus))]
     [XmlInclude(typeof(Scooter))]
     [XmlInclude(typeof(Car))]
-    public class Vehicle
+    public class Vehicle : IComparable
     {
         public Engine engine;
         public Gear gear;
@@ -42,6 +43,14 @@ namespace VehicleFleet
             engine.ShowEngineInfo();
             transmission.ShowTransmissionInfo();
             gear.ShowGearInfo();
+        }
+        public int CompareTo(object obj)
+        {
+            if (obj is Vehicle vehicle)
+            {
+                return transmission.Type.CompareTo(vehicle.transmission.Type);
+            }
+            else throw new ArgumentException("Некорректное значение параметра");
         }
 
     }

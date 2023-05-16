@@ -8,6 +8,11 @@ namespace VehicleFleet
         public int Number { get; set; }
         public int LoadCapacity { get; set; }
 
+        public Gear()
+        {
+
+        }
+
         public Gear(int numberOfWheels, int number, int loadCapacity)
         {
             NumberOfWheels = numberOfWheels;

@@ -8,6 +8,11 @@ namespace VehicleFleet
         public string Manufacturer { get; set; }
         public int NumberOfGears { get; set; }
 
+        public Transmission()
+        {
+
+        }
+
         public Transmission(string type, string manufacturer, int numberOfGears)
         {
             Type = type;
